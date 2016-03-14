@@ -21,8 +21,8 @@ var objectModalWindow = (function () {
 		center: function () {
 			//opdrachten centreren
 
-			var links = Math.max($window.width()-$contentsModal.outerWidth(), 0)/2; 
-			var boven = Math.max($window.height()-$contentsModal.outerHeight(), 0)/2; 
+			var links = Math.max($window.width()-$contentsModal.outerWidth(), 0) / 2;  //zorgt ervoor dat de content centreert in de breedte
+			var boven = Math.max($window.height()-$contentsModal.outerHeight(), 0)/2;  //zorgt ervoor dat de content centreert in de hoogte
 			$contentsModal.css({left: links, top: boven});
 
 		},
@@ -30,9 +30,16 @@ var objectModalWindow = (function () {
 		open: function (settings) { //functie om er voor te zorgen dat het venster opent. , wanneer het opent is bepaald in modaalstart. 
 				//opdrachten openen
 			$contentsModal.append(settings.inhoud, $buttonClose);
-			$contentsModal.css({width: settings.breedte+'px' ||'auto'
-							  , height: settings.hoogte+'px' || 'auto'}); //geef aan dat je de breedte wilt gebruiken die in modaalstart is aangegeven
-			$modalWindow.appendTo('body'); //zet het venster op de body
+			$contentsModal.css({width: settings.breedte+'px' ||'auto', 
+							   height: settings.hoogte+'px' || 'auto'})
+								.on('click', function(e){
+									e.stopPropagation(); 
+
+					}); //geef aan dat je de breedte wilt gebruiken die in modaalstart is aangegeven
+
+
+
+			$modalWindow.appendTo('body').on('click', objectModalWindow.sluiten); //zet het venster op de body
 			objectModalWindow.center();
 			$buttonClose.on('click', objectModalWindow.sluiten); //click event nodig voor het sluiten van de venster op de knop.
 			$window.on('resize', objectModalWindow.center); //resised en centered als het scherm verkleint wordt.
@@ -43,7 +50,7 @@ var objectModalWindow = (function () {
 			//opdrachten sluiten
 			console.log('Closing window'); //logt het feit dat het venster gesloten is
 			$modalWindow.detach(); //haalt het complet venster weg
-			$contentsModal.empty(); //leegt de inhoud van het venster
+			$contentsModal.empty().off('click', objectModalWindow.sluiten); //leegt de inhoud van het venster
 			$window.off('resize', objectModalWindow.center);
 		}
 

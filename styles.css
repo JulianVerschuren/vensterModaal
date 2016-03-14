@@ -1,16 +1,27 @@
 body{
 
 background-color: aqua;	
-
+text-align: center;
 
 }
 
+footer{height: 100px;
+width: 100%;
+margin-top: 610px;
+background-color: darkcyan;
 
+}
 
+#validatie img {
+    height: 3em;
+    width: auto;
+    border: 0;
+    margin: 0 .3em;
+}
 .modal-window{
 
 
-   position: fixed;
+   position: fixed;          
     top: 0;
     left: 0;
     height: 100%;
@@ -18,11 +29,14 @@ background-color: aqua;
     background-color: rgba(0,0,0,0.5);
 	cursor: pointer;
 	z-index: 1;
+text-align: center;
 }
 
 
 .contents-Modal{
 
+vertical-align: center;
+text-align: center;
 padding-left: 20px;
 padding-right: 20px;
 padding-top: 20px;
@@ -32,15 +46,16 @@ width: 80%;
 background-color: white;
 cursor: default;
 border-radius: 20px;
+margin: 0px auto;
 }
 
 .button-Close {
+margin-top: 50%;
 position: absolute;
 top: 0;
-right: 100;
 border-radius: 20px;
 color: red;
-margin-left: 570px;
+margin-left: 270px;
 margin-top: -3px;
 font-size: 40px;
 font-weight: bold;
