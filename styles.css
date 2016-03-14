@@ -10,13 +10,14 @@ background-color: aqua;
 .modal-window{
 
 
-   position: absolute;
+   position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.5);
 	cursor: pointer;
+	z-index: 1;
 }
 
 
@@ -27,9 +28,7 @@ padding-right: 20px;
 padding-top: 20px;
 padding-bottom: 20px;
 height: 65%;
-width: 1200px;
-top: 0;
-left: 0;
+width: 80%;
 background-color: white;
 cursor: default;
 border-radius: 20px;
@@ -38,8 +37,16 @@ border-radius: 20px;
 .button-Close {
 position: absolute;
 top: 0;
-left: 0;
+right: 100;
+border-radius: 20px;
+color: red;
+margin-left: 570px;
+margin-top: -3px;
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+}
 
-
-
+.button-Close:hover { 
+    background-color: darkred;
 }
