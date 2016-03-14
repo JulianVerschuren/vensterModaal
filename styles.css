@@ -22,11 +22,24 @@ background-color: aqua;
 
 .contents-Modal{
 
-
-height: 130px;
-width: 90px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+padding-bottom: 20px;
+height: 65%;
+width: 1200px;
 top: 0;
 left: 0;
-background-color: green;
+background-color: white;
 cursor: default;
+border-radius: 20px;
+}
+
+.button-Close {
+position: absolute;
+top: 0;
+left: 0;
+
+
+
 }
